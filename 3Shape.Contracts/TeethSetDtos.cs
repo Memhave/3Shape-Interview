@@ -1,4 +1,4 @@
 namespace _3Shape.Contracts;
 
-public record CreateTeethSetDto(
+public record CreateReconstructionDto(
     string InitialScan);

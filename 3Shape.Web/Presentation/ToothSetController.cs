@@ -23,13 +23,9 @@ public class ToothSetController : ControllerBase
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
-    public async Task<ActionResult<Guid>> CreateImage(
-        CreateTeethSetDto dto)
+    public async Task<ActionResult<Guid>> CreateReconstruction(
+        CreateReconstructionDto dto)
     {
-        return await _scanner.CreateImage(dto);
+        return await _scanner.CreateReconstruction(dto);
     }
-
-    
-
-
 }

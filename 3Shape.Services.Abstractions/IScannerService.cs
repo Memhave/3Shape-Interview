@@ -6,5 +6,5 @@ namespace _3Shape.Services.Abstractions;
 
 public interface IScannerService
 {
-    public Task<Guid> CreateImage(CreateTeethSetDto dto);
+    public Task<Guid> CreateReconstruction(CreateReconstructionDto dto);
 }

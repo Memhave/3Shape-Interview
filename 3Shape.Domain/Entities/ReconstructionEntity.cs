@@ -11,10 +11,14 @@ public class ReconstructionEntity
     // This record could be another entity, but to keep it simple
     // Idea is to be able to step "backwards" easily, without doing expensive
     // string manipulation or complex operations
-    // So you could simply do entity.Stepback(N) -> would minus the last two (in order)
+    // So you could simply do entity.Stepback(N) -> would minus the last N (in order)
     // additions to the image
     // this might be a very complex or over engineered solution and might require some thread protection
     public Dictionary<int, string> Steps {get; private set; } = new Dictionary<int, string>();
+    //step 0
+    //"1oene"
+    //step 0+1
+    //"1oene2en"
 
     public ReconstructionEntity(Guid id, string initialScan)
     {
@@ -52,6 +56,9 @@ public class ReconstructionEntity
 
     public void Trim(int stepCount)
     {
+        //1abc
+        //c2de
+        //f3...
         // walk back steps here
     }
 

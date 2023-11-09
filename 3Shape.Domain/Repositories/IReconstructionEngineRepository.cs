@@ -11,4 +11,5 @@ public interface IReconstructionEngineRepository
     public Task<ReconstructionEntity> Get(Guid id);
     public Task Insert(ReconstructionEntity entity);
     public Task Remove(ReconstructionEntity entity);
+    public Task<ReconstructionEntity> Find(Guid reconstructionId);
 }

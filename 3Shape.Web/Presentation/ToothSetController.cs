@@ -27,10 +27,20 @@ public class ToothSetController : ControllerBase
         return await _scanner.CreateReconstruction(dto);
     }
 
+    [HttpPatch("{reconstructionId:guid}")]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status409Conflict)]
+    public async Task<ActionResult<ReconstructionDto>> AddScanToImage(
+        [Required][FromRoute] Guid reconstructionId,
+        [Required][FromBody] AddStepDto dto)
+    {
+        return await _scanner.AddStep(reconstructionId, dto);
+    }
+
     [HttpGet("{reconstructionId:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<string>> GetReconstruction(
+    public async Task<ActionResult<ReconstructionDto>> GetReconstruction(
         [Required][FromRoute] Guid reconstructionId)
     {
         return await _scanner.GetReconstruction(reconstructionId);
@@ -43,14 +53,14 @@ public class ToothSetController : ControllerBase
         [Required][FromRoute] Guid reconstructionId,
         [Required][FromQuery] int toothId)
     {
-        return await _scanner.GetReconstruction(reconstructionId, toothId);
+        return await _scanner.GetReconstructionTooth(reconstructionId, toothId);
     }
 
     [HttpPatch("{reconstructionId:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<string>> Trim(
+    public async Task<ActionResult<ReconstructionDto>> Trim(
         [Required][FromRoute] Guid reconstructionId, 
         [Required][FromQuery] int steps)
     {

@@ -34,7 +34,7 @@ public class ReconstructionController : ControllerBase
         [Required][FromRoute] Guid reconstructionId,
         [Required][FromBody] AddStepDto dto)
     {
-        return await _scanner.AddStep(reconstructionId, dto);
+        return await _scanner.AddScan(reconstructionId, dto);
     }
 
     [HttpGet("{reconstructionId:guid}")]

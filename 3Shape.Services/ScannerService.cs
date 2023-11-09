@@ -38,7 +38,7 @@ internal sealed class ScannerService : IScannerService
 
     public async Task<ReconstructionDto> AddScan(Guid reconstructionId, AddStepDto dto)
     {
-        var entity = await _repo.Find(reconstructionId);
+        var entity = await _repo.Get(reconstructionId);
 
         // normally, I've only seen different responses done via throwing, so..
         // throw NotFoundException
@@ -51,7 +51,7 @@ internal sealed class ScannerService : IScannerService
 
     public async Task<ReconstructionDto> GetReconstruction(Guid reconstructionId)
     {
-        var entity = await _repo.Find(reconstructionId);
+        var entity = await _repo.Get(reconstructionId);
 
         // Handle not found
 
@@ -60,7 +60,7 @@ internal sealed class ScannerService : IScannerService
 
     public async Task<string> GetReconstructionTooth(Guid reconstructionId, int toothId)
     {
-        var entity = await _repo.Find(reconstructionId);
+        var entity = await _repo.Get(reconstructionId);
 
         // Handle not found
     
@@ -69,7 +69,7 @@ internal sealed class ScannerService : IScannerService
 
     public async Task<ReconstructionDto> Trim(Guid reconstructionId, int stepCount)
     {
-        var entity = await _repo.Find(reconstructionId);
+        var entity = await _repo.Get(reconstructionId);
 
         // Handle not found
         

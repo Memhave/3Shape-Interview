@@ -7,7 +7,7 @@ public record CreateReconstructionDto(
     string InitialScan);
 
 public record AddStepDto(
-    string Step);
+    string Scan);
 
 public record ReconstructionDto(
     Guid Id,

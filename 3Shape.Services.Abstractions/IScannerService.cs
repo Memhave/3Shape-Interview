@@ -6,7 +6,7 @@ namespace _3Shape.Services.Abstractions;
 
 public interface IScannerService
 {
-    public Task<ReconstructionDto> AddStep(Guid reconstructionId, AddStepDto dto);
+    public Task<ReconstructionDto> AddScan(Guid reconstructionId, AddStepDto dto);
     public Task<ReconstructionDto> CreateReconstruction(CreateReconstructionDto dto);
     public Task<ReconstructionDto> GetReconstruction(Guid reconstructionId);
     public Task<string> GetReconstructionTooth(Guid reconstructionId, int toothId);

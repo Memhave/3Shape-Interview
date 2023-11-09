@@ -36,7 +36,7 @@ internal sealed class ScannerService : IScannerService
         return new ReconstructionDto(entity.Id, entity.Image, entity.Steps);
     }
 
-    public async Task<ReconstructionDto> AddStep(Guid reconstructionId, AddStepDto dto)
+    public async Task<ReconstructionDto> AddScan(Guid reconstructionId, AddStepDto dto)
     {
         var entity = await _repo.Find(reconstructionId);
 
@@ -44,7 +44,7 @@ internal sealed class ScannerService : IScannerService
         // throw NotFoundException
         // Don't really think its the best, but its very easy to do
 
-        entity.AddStep(dto.Step);
+        entity.AddScan(dto.Scan);
 
         return new ReconstructionDto(entity.Id, entity.Image, entity.Steps);
     }

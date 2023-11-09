@@ -30,16 +30,23 @@ public class ReconstructionEntity
         return "";
     }
 
-    public void AddStep(string scan)
+
+    public void AddScan(string scan)
     {
-        // Attach it to the image (align with overlap)
+        // Remove overlap, assuming no weird deviation
+        var newScanPart = NonOverlap(Image, scan);
+
+        // Add the scan to the reconstruction
+        Image += newScanPart;
+
+        // Then increment steps 
+        // if the deviation is allowed, it should probably be noted
+        // Increment steps first
+        Steps.Add(Steps.Count, scan);
+
         // We probably need to check for deviation - 
         // Can you get a scan thats 1abcd and then another thats overlapping
         // but with ed2...? (c -> e)
-
-        // Then increment steps 
-        Steps.Add(Steps.Count, scan);
-        // if the deviation is allowed, it should probably be noted
     }
 
     public void Trim(int stepCount)
@@ -47,4 +54,13 @@ public class ReconstructionEntity
         // walk back steps here
     }
 
+    // From https://stackoverflow.com/a/70315812
+    // Decided not to implement this as its not a trivial problem (for me)
+    private string NonOverlap(string s1, string s2)
+    {
+        var re = string.Join("?", s1.ToCharArray()) + "?";
+        var m = Regex.Match(s2, re);
+        int s = m.Index + m.Length;
+        return s2.Substring(s);
+    }
 }

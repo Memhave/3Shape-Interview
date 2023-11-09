@@ -21,7 +21,7 @@ public class ToothSetController : ControllerBase
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
-    public async Task<ActionResult<Guid>> CreateReconstruction(
+    public async Task<ActionResult<ReconstructionDto>> CreateReconstruction(
         [Required][FromBody] CreateReconstructionDto dto)
     {
         return await _scanner.CreateReconstruction(dto);

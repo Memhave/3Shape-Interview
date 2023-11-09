@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace _3Shape.Domain;
+namespace _3Shape.Domain.Entities;
 
 public class ReconstructionEntity
 {
@@ -13,15 +13,17 @@ public class ReconstructionEntity
     // So you could simply do entity.Stepback(N) -> would minus the last two (in order)
     // additions to the image
     // this might be a very complex or over engineered solution and might require some thread protection
-    public Dictionary<int, string> ImageRecord {get; init; }
+    public Dictionary<int, string> Steps {get; init; }
 
-    public string GetScanPart(int toothId)
+    // Validation could be done through a constructor here, or a dedicated method
+
+    public string GetToothScan(int toothId)
     {
         // scan the image for the part and return it
         return "";
     }
 
-    public string AddScanPart(string part)
+    public string AddStep(string part)
     {
         // Attach it to the image (align with overlap)
         // We probably need to check for deviation - 

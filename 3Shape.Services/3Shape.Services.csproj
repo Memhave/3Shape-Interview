@@ -1,5 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\3Shape.Contracts\3Shape.Contracts.csproj" />
+    <ProjectReference Include="..\3Shape.Services.Abstractions\3Shape.Services.Abstractions.csproj" />
+    <ProjectReference Include="..\3Shape.Domain\3Shape.Domain.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>

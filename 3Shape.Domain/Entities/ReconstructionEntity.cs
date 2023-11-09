@@ -14,7 +14,7 @@ public class ReconstructionEntity
     // So you could simply do entity.Stepback(N) -> would minus the last two (in order)
     // additions to the image
     // this might be a very complex or over engineered solution and might require some thread protection
-    public Dictionary<int, string> Steps {get; private set; }
+    public Dictionary<int, string> Steps {get; private set; } = new Dictionary<int, string>();
 
     public ReconstructionEntity(Guid id, string initialScan)
     {

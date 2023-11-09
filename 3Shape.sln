@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3Shape.Services.Abstraction
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3Shape.Web", "3Shape.Web\3Shape.Web.csproj", "{677F916F-58D4-4D93-8AF5-5A04E37716C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3Shape.Services.Tests.Unit", "3Shape.Services.Tests.Unit\3Shape.Services.Tests.Unit.csproj", "{4397BCB1-8702-4B18-9532-96F1103E7F90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3Shape.Web.Tests.Integration", "3Shape.Web.Tests.Integration\3Shape.Web.Tests.Integration.csproj", "{85159F06-2DC1-497A-ADED-B35EAA5C7CF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +52,13 @@ Global
 		{677F916F-58D4-4D93-8AF5-5A04E37716C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{677F916F-58D4-4D93-8AF5-5A04E37716C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{677F916F-58D4-4D93-8AF5-5A04E37716C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4397BCB1-8702-4B18-9532-96F1103E7F90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4397BCB1-8702-4B18-9532-96F1103E7F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4397BCB1-8702-4B18-9532-96F1103E7F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4397BCB1-8702-4B18-9532-96F1103E7F90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85159F06-2DC1-497A-ADED-B35EAA5C7CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85159F06-2DC1-497A-ADED-B35EAA5C7CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85159F06-2DC1-497A-ADED-B35EAA5C7CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85159F06-2DC1-497A-ADED-B35EAA5C7CF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

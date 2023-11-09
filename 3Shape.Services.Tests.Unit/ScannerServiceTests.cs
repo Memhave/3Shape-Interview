@@ -14,15 +14,19 @@ namespace _3Shape.Services.Tests.Unit;
 public class ScannerServiceTests
 {
     /*
+
+    Each of these can be a test case
+
     §  Receive images from the scanner and forward them to the reconstruction engine.
 
     §  Return the currently reconstructed model from the reconstruction engine, e.g., "1oene2enoe3neoo4aei5iia" described in the introduction.
 
-   
+    §  Allow trimming away previously scanned sections from the reconstruction model, i.e., reset what was previously scanned. E.g., remove "ne2en" from the string above.
 
     §  Get the geometry of a specific tooth from a reconstructed model. E.g. return "1oene" when the upper right molar furthest in the back is requested.
 
     §  Create a case to be sent to a lab with a tooth marked for a specific restoration.
+
     */
     
     private readonly Mock<IReconstructionEngineRepository> _repoMock = new Mock<IReconstructionEngineRepository>();

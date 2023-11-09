@@ -12,11 +12,11 @@ namespace _3Shape.Web.Controllers;
 //[Authorize]
 [ApiController]
 [Route("api/scans/teethset")]
-public class ToothSetController : ControllerBase
+public class ReconstructionController : ControllerBase
 {
     private readonly IScannerService _scanner;
 
-    public ToothSetController(IScannerService scanner) => _scanner = scanner;
+    public ReconstructionController(IScannerService scanner) => _scanner = scanner;
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]

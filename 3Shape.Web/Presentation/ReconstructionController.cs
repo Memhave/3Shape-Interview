@@ -46,17 +46,17 @@ public class ReconstructionController : ControllerBase
         return await _scanner.GetReconstruction(reconstructionId);
     }
 
-    [HttpGet("{reconstructionId:guid}")]
+    [HttpGet("{reconstructionId:guid}/{toothId:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult<string>> GetReconstruction(
         [Required][FromRoute] Guid reconstructionId,
-        [Required][FromQuery] int toothId)
+        [Required][FromRoute] int toothId)
     {
         return await _scanner.GetReconstructionTooth(reconstructionId, toothId);
     }
 
-    [HttpPatch("{reconstructionId:guid}")]
+    [HttpPatch("{reconstructionId:guid}/trim")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

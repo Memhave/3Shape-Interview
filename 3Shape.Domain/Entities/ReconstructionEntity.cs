@@ -14,11 +14,11 @@ public class ReconstructionEntity
     // So you could simply do entity.Stepback(N) -> would minus the last N (in order)
     // additions to the image
     // this might be a very complex or over engineered solution and might require some thread protection
-    public Dictionary<int, string> Steps {get; private set; } = new Dictionary<int, string>();
     //step 0
     //"1oene"
     //step 0+1
     //"1oene2en"
+    public Dictionary<int, string> Steps {get; private set; } = new Dictionary<int, string>();
 
     public ReconstructionEntity(Guid id, string initialScan)
     {
@@ -29,12 +29,16 @@ public class ReconstructionEntity
         Steps.Add(0, initialScan);
     }
 
+    // "1oene2enoe3neoo4aei5iia"
     public string GetToothScan(int toothId)
     {
-        // scan the image for the part and return it
-        return "";
-    }
+        int endIndex = toothId + 1;
 
+        // Not tested, but I think this will be off by 1 (the -1) when the first tooth (and last?) is queried
+        return Image.Substring(
+            Image.IndexOf(toothId.ToString()) - 1, 
+            Image.IndexOf(endIndex.ToString()));
+    }
 
     public void AddScan(string scan)
     {
